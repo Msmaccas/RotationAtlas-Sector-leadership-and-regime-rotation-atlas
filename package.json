@@ -1,0 +1,20 @@
+{
+  "name": "rotation-atlas-monorepo",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Monorepo for the RotationAtlas sector‑rotation intelligence platform",
+  "scripts": {
+    "build": "echo 'nothing to build – plain JS packages'",
+    "test": "node tests/run-tests.js",
+    "smoke": "node packages/server/cli.js",
+    "start": "node packages/server/index.js"
+  },
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "devDependencies": {},
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

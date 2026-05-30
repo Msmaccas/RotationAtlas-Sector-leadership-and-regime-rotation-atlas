@@ -1,0 +1,17 @@
+{
+  "name": "@rotationatlas/worker",
+  "version": "0.1.0",
+  "description": "Background job runner for RotationAtlas",
+  "main": "index.js",
+  "scripts": {
+    "build": "echo 'nothing to build'",
+    "start": "node index.js",
+    "smoke": "node index.js",
+    "test": "echo 'no tests in worker package'"
+  },
+  "dependencies": {
+    "@rotationatlas/data": "0.1.0",
+    "@rotationatlas/agents": "0.1.0"
+  },
+  "devDependencies": {}
+}

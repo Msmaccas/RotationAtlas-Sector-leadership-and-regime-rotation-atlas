@@ -1,0 +1,12 @@
+{
+  "name": "@rotationatlas/core",
+  "version": "0.1.0",
+  "description": "Core domain models and analytics for RotationAtlas",
+  "main": "index.js",
+  "scripts": {
+    "build": "echo 'nothing to build'",
+    "test": "echo 'no tests in core package'"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}

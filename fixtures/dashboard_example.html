@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>RotationAtlas Sample Dashboard</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body { font-family: sans-serif; margin: 20px; }
+    #chart-container { width: 800px; height: 400px; margin: auto; }
+  </style>
+</head>
+<body>
+  <h1>RotationAtlas Sample Dashboard</h1>
+  <p>This static dashboard illustrates how relative strength of sample sectors evolves over time.  It uses the fixture data under <code>fixtures/sector_returns.csv</code> and Chart.js for visualisation.</p>
+  <div id="chart-container">
+    <canvas id="rsChart"></canvas>
+  </div>
+  <script>
+    // Sample data extracted from fixtures/sector_returns.csv
+    const dates = ['2026-05-20','2026-05-21','2026-05-22','2026-05-23','2026-05-24','2026-05-25','2026-05-26','2026-05-27','2026-05-28','2026-05-29'];
+    const benchmark = [0.005,0.002,0.004,0.003,-0.001,0.006,0.002,0.003,0.000,0.005];
+    const XLK = [0.007,0.003,0.004,0.002,0.000,0.009,0.004,0.003,0.001,0.008];
+    const XLE = [0.004,-0.002,0.006,0.005,-0.003,0.008,0.003,0.005,0.000,0.007];
+    const relativeStrength = (sector, benchmark) => sector.map((v,i) => benchmark[i] === 0 ? 0 : v/benchmark[i]);
+    const data = {
+      labels: dates,
+      datasets: [
+        {
+          label: 'XLK/Benchmark',
+          data: relativeStrength(XLK, benchmark),
+          borderColor: 'rgba(75,192,192,1)',
+          fill: false
+        },
+        {
+          label: 'XLE/Benchmark',
+          data: relativeStrength(XLE, benchmark),
+          borderColor: 'rgba(255,99,132,1)',
+          fill: false
+        }
+      ]
+    };
+    const config = {
+      type: 'line',
+      data: data,
+      options: {
+        responsive: true,
+        scales: {
+          y: { beginAtZero: false },
+        }
+      }
+    };
+    new Chart(document.getElementById('rsChart'), config);
+  </script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+{
+  "name": "@rotationatlas/server",
+  "version": "0.1.0",
+  "description": "API server and CLI for RotationAtlas",
+  "main": "index.js",
+  "scripts": {
+    "build": "echo 'nothing to build'",
+    "start": "node index.js",
+    "smoke": "node cli.js",
+    "test": "echo 'no tests in server package'"
+  },
+  "dependencies": {
+    "@rotationatlas/core": "0.1.0",
+    "@rotationatlas/data": "0.1.0",
+    "@rotationatlas/agents": "0.1.0"
+  },
+  "devDependencies": {}
+}
